@@ -9,6 +9,8 @@ use Cwd qw(cwd);
 
 use Test::More 0.88;
 
+use lib qw(.);
+
 use FindBin qw($RealBin);
 use lib "$RealBin/../corpus/lib";
 
