@@ -27,7 +27,7 @@ my %WriteMakefileArgs = (
     "Module::CPANfile" => 0,
     "Module::Path" => 0,
     "strict" => 0,
-    "version" => 0,
+    "version" => "0.81",
     "warnings" => 0
   },
   "TEST_REQUIRES" => {
@@ -57,7 +57,7 @@ my %FallbackPrereqs = (
   "Test::More" => "0.88",
   "lib" => 0,
   "strict" => 0,
-  "version" => 0,
+  "version" => "0.81",
   "warnings" => 0
 );
 

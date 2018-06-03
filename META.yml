@@ -37,7 +37,7 @@ requires:
   Module::Path: '0'
   perl: '5.006'
   strict: '0'
-  version: '0'
+  version: '0.81'
   warnings: '0'
 resources:
   bugtracker: https://github.com/skirmess/App-ReportPrereqs/issues

@@ -6,7 +6,7 @@ requires 'Module::CPANfile';
 requires 'Module::Path';
 requires 'perl', '5.006';
 requires 'strict';
-requires 'version';
+requires 'version', '0.81';
 requires 'warnings';
 
 on configure => sub {
