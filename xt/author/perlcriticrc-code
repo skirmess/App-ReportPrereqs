@@ -344,7 +344,7 @@ allow_unused_subroutine_arguments = 1
 [Compatibility::PerlMinimumVersionAndWhy]
 #[Compatibility::PodMinimumVersion]
 [Compatibility::ProhibitUnixDevNull]
-[Documentation::ProhibitAdjacentLinks]
+#[Documentation::ProhibitAdjacentLinks]
 [Documentation::ProhibitBadAproposMarkup]
 [Documentation::ProhibitDuplicateHeadings]
 #[Documentation::ProhibitDuplicateSeeAlso]
