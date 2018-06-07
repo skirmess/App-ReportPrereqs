@@ -8,7 +8,7 @@ Version 0.001
 
 # SYNOPSIS
 
-- **report-prereqs** \[**--with-develop**\]
+- **report-prereqs** \[**--with-develop**\] \[URL\]
 
 # DESCRIPTION
 
@@ -72,6 +72,10 @@ after all your dependencies are installed.
 
     - perl -S cpanm --verbose --notest --skip-satisfied App::ReportPrereqs
     - perl -S report-prereqs
+
+## Example 5 Show prerequistes from a cpanfile url
+
+    report-prereqs https://raw.githubusercontent.com/skirmess/App-ReportPrereqs/master/cpanfile
 
 # RATIONALE
 

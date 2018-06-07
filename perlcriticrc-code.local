@@ -1,2 +1,3 @@
 [-Documentation::ProhibitAdjacentLinks]
+[-ErrorHandling::RequireCarping]
 [-Subroutines::ProhibitExcessComplexity]

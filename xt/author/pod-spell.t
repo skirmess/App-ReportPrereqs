@@ -23,3 +23,5 @@ AppVeyor
 CI
 Kirmess
 Sven
+cpanfile
+prerequistes

@@ -1,6 +1,8 @@
 requires 'ExtUtils::MakeMaker';
 requires 'File::Basename';
+requires 'File::Temp';
 requires 'Getopt::Long';
+requires 'HTTP::Tiny', '0.014';
 requires 'List::Util';
 requires 'Module::CPANfile';
 requires 'Module::Path';
@@ -18,6 +20,7 @@ on test => sub {
     requires 'Capture::Tiny';
     requires 'Cwd';
     requires 'FindBin';
+    requires 'Test::MockModule';
     requires 'Test::More', '0.88';
     requires 'lib';
     requires 'perl', '5.006';

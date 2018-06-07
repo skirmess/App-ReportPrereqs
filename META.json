@@ -31,7 +31,9 @@
          "requires" : {
             "ExtUtils::MakeMaker" : "0",
             "File::Basename" : "0",
+            "File::Temp" : "0",
             "Getopt::Long" : "0",
+            "HTTP::Tiny" : "0.014",
             "List::Util" : "0",
             "Module::CPANfile" : "0",
             "Module::Path" : "0",
@@ -46,6 +48,7 @@
             "Capture::Tiny" : "0",
             "Cwd" : "0",
             "FindBin" : "0",
+            "Test::MockModule" : "0",
             "Test::More" : "0.88",
             "lib" : "0",
             "perl" : "5.006"
