@@ -1,7 +1,0 @@
-[ControlStructures::ProhibitPostfixControls]
-flowcontrol = BAIL_OUT
-[-Modules::RequireExplicitInclusion]
-[-RegularExpressions::RequireDotMatchAnything]
-[-RegularExpressions::RequireExtendedFormatting]
-[-RegularExpressions::RequireLineBoundaryMatching]
-[-Subroutines::ProtectPrivateSubs]
