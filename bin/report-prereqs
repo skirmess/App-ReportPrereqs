@@ -27,7 +27,8 @@ if ( !caller ) {
 
 sub _main {
     my $with_develop = 0;
-    return _usage() if !GetOptions( 'with-develop' => \$with_develop );
+    my $with_feature = [];
+    return _usage() if !GetOptions( 'with-develop' => \$with_develop, 'with-feature=s@' => \$with_feature );
 
     my $temp;
     my $cpanfile     = 'cpanfile';
@@ -53,7 +54,7 @@ sub _main {
     }
 
     my $prereqs;
-    if ( !eval { $prereqs = Module::CPANfile->load($cpanfile)->prereqs; 1; } ) {
+    if ( !eval { $prereqs = Module::CPANfile->load($cpanfile)->prereqs_with( @{$with_feature} ); 1; } ) {
         my $error = $@;
         print {*STDERR} "\n$error\n";
         return 1;
@@ -156,7 +157,7 @@ sub _main {
 sub _usage {
     my $basename = fileparse($0);
 
-    print {*STDERR} "usage: $basename [--with-develop] [URL]\n";
+    print {*STDERR} "usage: $basename [--with-{develop,feature=id}] [URL]\n";
     return 2;
 }
 
@@ -180,7 +181,7 @@ Version 0.001
 
 =over
 
-=item B<report-prereqs> [B<--with-develop>] [URL]
+=item B<report-prereqs> [B<--with-{develop,feature=id}>] [URL]
 
 =back
 
@@ -191,6 +192,9 @@ L<Module::CPANfile|Module::CPANfile>. It reports the version of all modules
 listed as prerequisites (including 'recommends', 'suggests', etc.). However,
 any 'develop' prerequisites are not reported, unless they show up in another
 category or the C<--with-develop> option is used.
+
+Option C<--with-feature> enables optional features provided by a CPAN
+distribution. Option may be used more than once.
 
 Versions are reported based on the result of C<parse_version> from
 L<ExtUtils::MakeMaker|ExtUtils::MakeMaker>, which means prerequisite modules
@@ -207,6 +211,10 @@ of all versions.
 =item B<--with-develop>
 
 Also report develop prerequisites.
+
+=item B<--with-feature> String: Name
+
+Specify optional feature to enable. Option may be used more than once.
 
 =back
 

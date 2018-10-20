@@ -30,7 +30,7 @@ sub main {
         is( $result[0], 2, '_main() returns 2' );
         ok( scalar @result == 1, '... and nothing else' );
         is( $stdout, q{}, '... prints nothing to STDOUT' );
-        like( $stderr, qr{.+\n\Qusage: main.t [--with-develop] [URL]\E$}, '... prints usage to STDERR' );
+        like( $stderr, qr{.+\n\Qusage: main.t [--with-{develop,feature=id}] [URL]\E$}, '... prints usage to STDERR' );
     }
 
     note('to many arguments');
@@ -41,7 +41,7 @@ sub main {
         is( $result[0], 2, '_main() returns 2' );
         ok( scalar @result == 1, '... and nothing else' );
         is( $stdout, q{}, '... prints nothing to STDOUT' );
-        like( $stderr, qr{^\Qusage: main.t [--with-develop] [URL]\E$}, '... prints usage to STDERR' );
+        like( $stderr, qr{^\Qusage: main.t [--with-{develop,feature=id}] [URL]\E$}, '... prints usage to STDERR' );
     }
 
     note('corpus/dist1: no cpanfile');
