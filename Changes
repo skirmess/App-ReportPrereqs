@@ -2,6 +2,8 @@ Revision history for App-ReportPrereqs
 
 {{$NEXT}}
 
+0.002  2018-10-20 19:55:00 UTC
+
   - Added support for --with-feature (Stephan Sachse)
   - Added support to download a cpanfile with HTTP::Tiny
   - Improved documentation

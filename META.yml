@@ -28,7 +28,7 @@ no_index:
 provides:
   App::ReportPrereqs:
     file: bin/report-prereqs
-    version: '0.001'
+    version: '0.002'
 requires:
   ExtUtils::MakeMaker: '0'
   File::Basename: '0'
@@ -46,7 +46,7 @@ resources:
   bugtracker: https://github.com/skirmess/App-ReportPrereqs/issues
   homepage: https://github.com/skirmess/App-ReportPrereqs
   repository: https://github.com/skirmess/App-ReportPrereqs.git
-version: '0.001'
+version: '0.002'
 x_contributors:
   - 'Stephan Sachse <ste.sachse@gmail.com>'
 x_generated_by_perl: v5.24.0
