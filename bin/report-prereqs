@@ -27,8 +27,8 @@ if ( !caller ) {
 
 sub _main {
     my $with_develop = 0;
-    my $with_feature = [];
-    return _usage() if !GetOptions( 'with-develop' => \$with_develop, 'with-feature=s@' => \$with_feature );
+    my @features;
+    return _usage() if !GetOptions( 'with-develop' => \$with_develop, 'with-feature=s@' => \@features );
 
     my $temp;
     my $cpanfile     = 'cpanfile';
@@ -54,7 +54,7 @@ sub _main {
     }
 
     my $prereqs;
-    if ( !eval { $prereqs = Module::CPANfile->load($cpanfile)->prereqs_with( @{$with_feature} ); 1; } ) {
+    if ( !eval { $prereqs = Module::CPANfile->load($cpanfile)->prereqs_with(@features); 1; } ) {
         my $error = $@;
         print {*STDERR} "\n$error\n";
         return 1;
@@ -298,6 +298,14 @@ L<https://github.com/skirmess/App-ReportPrereqs>
 =head1 AUTHOR
 
 Sven Kirmess <sven.kirmess@kzone.ch>
+
+=head1 CONTRIBUTORS
+
+=over
+
+=item Stephan Sachse <ste.sachse@gmail.com>
+
+=back
 
 =head1 COPYRIGHT AND LICENSE
 

@@ -2,7 +2,8 @@ Revision history for App-ReportPrereqs
 
 {{$NEXT}}
 
-  - Add support to download a cpanfile with HTTP::Tiny
+  - Added support for --with-feature (Stephan Sachse)
+  - Added support to download a cpanfile with HTTP::Tiny
   - Improved documentation
 
 0.001  2018-06-03 22:17:51 UTC

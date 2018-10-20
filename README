@@ -8,7 +8,7 @@ VERSION
 
 SYNOPSIS
 
-    report-prereqs [--with-develop] [URL]
+    report-prereqs [--with-{develop,feature=id}] [URL]
 
 DESCRIPTION
 
@@ -17,6 +17,9 @@ DESCRIPTION
     prerequisites (including 'recommends', 'suggests', etc.). However, any
     'develop' prerequisites are not reported, unless they show up in
     another category or the --with-develop option is used.
+
+    Option --with-feature enables optional features provided by a CPAN
+    distribution. Option may be used more than once.
 
     Versions are reported based on the result of parse_version from
     ExtUtils::MakeMaker, which means prerequisite modules are not actually
@@ -31,6 +34,11 @@ OPTIONS
     --with-develop
 
       Also report develop prerequisites.
+
+    --with-feature String: Name
+
+      Specify optional feature to enable. Option may be used more than
+      once.
 
 EXIT STATUS
 
@@ -112,6 +120,10 @@ SUPPORT
 AUTHOR
 
     Sven Kirmess <sven.kirmess@kzone.ch>
+
+CONTRIBUTORS
+
+    Stephan Sachse <ste.sachse@gmail.com>
 
 COPYRIGHT AND LICENSE
 

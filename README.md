@@ -8,7 +8,7 @@ Version 0.001
 
 # SYNOPSIS
 
-- **report-prereqs** \[**--with-develop**\] \[URL\]
+- **report-prereqs** \[**--with-{develop,feature=id}**\] \[URL\]
 
 # DESCRIPTION
 
@@ -17,6 +17,9 @@ The `report-prereqs` utility will examine `cpanfile` for prerequisites with
 listed as prerequisites (including 'recommends', 'suggests', etc.). However,
 any 'develop' prerequisites are not reported, unless they show up in another
 category or the `--with-develop` option is used.
+
+Option `--with-feature` enables optional features provided by a CPAN
+distribution. Option may be used more than once.
 
 Versions are reported based on the result of `parse_version` from
 [ExtUtils::MakeMaker](https://metacpan.org/pod/ExtUtils::MakeMaker), which means prerequisite modules
@@ -31,6 +34,10 @@ of all versions.
 - **--with-develop**
 
     Also report develop prerequisites.
+
+- **--with-feature** String: Name
+
+    Specify optional feature to enable. Option may be used more than once.
 
 # EXIT STATUS
 
@@ -112,6 +119,10 @@ public review and contribution under the terms of the license.
 # AUTHOR
 
 Sven Kirmess <sven.kirmess@kzone.ch>
+
+# CONTRIBUTORS
+
+- Stephan Sachse <ste.sachse@gmail.com>
 
 # COPYRIGHT AND LICENSE
 
