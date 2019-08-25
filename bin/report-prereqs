@@ -73,7 +73,7 @@ sub _main {
             my @modules = grep { $_ ne 'perl' } keys %{$req_ref};
             next TYPE if !@modules;
 
-            my $title = "\u$phase \u$type";
+            my $title   = "\u$phase \u$type";
             my @reports = ( [qw(Module Want Have)] );
 
           MODULE:
@@ -311,7 +311,7 @@ Stephan Sachse <ste.sachse@gmail.com>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is Copyright (c) 2018 by Sven Kirmess.
+This software is Copyright (c) 2018-2019 by Sven Kirmess.
 
 This is free software, licensed under:
 
