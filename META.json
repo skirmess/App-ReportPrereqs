@@ -31,7 +31,6 @@
          "requires" : {
             "ExtUtils::MakeMaker" : "0",
             "File::Basename" : "0",
-            "File::Temp" : "0",
             "Getopt::Long" : "0",
             "HTTP::Tiny" : "0.014",
             "List::Util" : "0",
