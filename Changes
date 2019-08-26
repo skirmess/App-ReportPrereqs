@@ -2,6 +2,8 @@ Revision history for App-ReportPrereqs
 
 {{$NEXT}}
 
+0.004  2019-08-26 20:19:23 UTC
+
   - No longer use a temp file for cpanfile downloaded from the net
   - Removed generated INSTALL file
 
