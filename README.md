@@ -4,7 +4,7 @@ report-prereqs - report prerequisite versions
 
 # VERSION
 
-Version 0.004
+Version 0.005
 
 # SYNOPSIS
 
