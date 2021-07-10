@@ -4,7 +4,7 @@
       "Sven Kirmess <sven.kirmess@kzone.ch>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 6.022, CPAN::Meta::Converter version 2.150010",
+   "generated_by" : "Dist::Zilla version 6.023, CPAN::Meta::Converter version 2.150010",
    "license" : [
       "freebsd"
    ],
@@ -46,7 +46,7 @@
          "requires" : {
             "Capture::Tiny" : "0",
             "Cwd" : "0",
-            "FindBin" : "0",
+            "File::Spec" : "0",
             "Test::MockModule" : "0",
             "Test::More" : "0.88",
             "lib" : "0",

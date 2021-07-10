@@ -6,14 +6,14 @@ use warnings;
 
 use Capture::Tiny qw(capture);
 use Cwd qw(cwd);
+use File::Basename ();
+use File::Spec     ();
 
 use Test::More 0.88;
 use Test::MockModule;
 
 use lib qw(.);
-
-use FindBin qw($RealBin);
-use lib "$RealBin/../corpus/lib";
+use lib File::Spec->catdir( File::Basename::dirname( Cwd::abs_path __FILE__ ), '../corpus/lib' );
 
 main();
 

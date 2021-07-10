@@ -18,7 +18,7 @@ on configure => sub {
 on test => sub {
     requires 'Capture::Tiny';
     requires 'Cwd';
-    requires 'FindBin';
+    requires 'File::Spec';
     requires 'Test::MockModule';
     requires 'Test::More', '0.88';
     requires 'lib';
@@ -115,7 +115,7 @@ on develop => sub {
     requires 'Perl::Critic::Policy::ValuesAndExpressions::RequireNumericVersion', '99';
     requires 'Perl::Critic::Policy::ValuesAndExpressions::UnexpandedSpecialLiteral', '99';
     requires 'Perl::Critic::Policy::Variables::ProhibitLoopOnHash', '0.008';
-    requires 'Perl::Critic::Policy::Variables::ProhibitUnusedVarsStricter', '0.110';
+    requires 'Perl::Critic::Policy::Variables::ProhibitUnusedVarsStricter', '0.111';
     requires 'Perl::Critic::Policy::Variables::ProhibitUselessInitialization', '0.02';
     requires 'Pod::Wordlist';
     requires 'Test2::V0';
