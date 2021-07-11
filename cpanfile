@@ -16,16 +16,15 @@ on configure => sub {
 };
 
 on test => sub {
-    requires 'Capture::Tiny';
-    requires 'Cwd';
-    requires 'File::Spec';
-    requires 'Test::MockModule';
     requires 'Test::More', '0.88';
     requires 'lib';
 };
 
 on develop => sub {
     requires 'CPANPLUS';
+    requires 'Capture::Tiny';
+    requires 'Cwd';
+    requires 'File::Spec';
     requires 'JSON::MaybeXS';
     requires 'Module::Info';
     requires 'Path::Tiny';
@@ -127,6 +126,7 @@ on develop => sub {
     requires 'Test::EOL';
     requires 'Test::Kwalitee';
     requires 'Test::MinimumVersion', '0.008';
+    requires 'Test::MockModule';
     requires 'Test::Mojibake';
     requires 'Test::More', '0.88';
     requires 'Test::NoTabs';
@@ -149,6 +149,7 @@ feature 'dzil', 'Dist::Zilla' => sub {
 on develop => sub {
         requires 'App::Prove';
         requires 'CPAN::Meta::Prereqs::Filter';
+        requires 'CPAN::Meta::Requirements';
         requires 'Carp';
         requires 'Dist::Zilla';
         requires 'Dist::Zilla::File::InMemory';
@@ -176,7 +177,7 @@ on develop => sub {
         requires 'Dist::Zilla::Plugin::Git::Tag';
         requires 'Dist::Zilla::Plugin::GithubMeta';
         requires 'Dist::Zilla::Plugin::License';
-        requires 'Dist::Zilla::Plugin::MakeMaker';
+        requires 'Dist::Zilla::Plugin::MakeMaker::Awesome';
         requires 'Dist::Zilla::Plugin::Manifest';
         requires 'Dist::Zilla::Plugin::ManifestSkip';
         requires 'Dist::Zilla::Plugin::MetaJSON';
@@ -202,6 +203,7 @@ on develop => sub {
         requires 'Dist::Zilla::Role::FileFinderUser';
         requires 'Dist::Zilla::Role::FileGatherer';
         requires 'Dist::Zilla::Role::FileMunger';
+        requires 'Dist::Zilla::Role::PPI';
         requires 'Dist::Zilla::Role::PluginBundle::Config::Slicer';
         requires 'Dist::Zilla::Role::PluginBundle::Easy';
         requires 'Dist::Zilla::Role::PrereqSource';
@@ -212,14 +214,15 @@ on develop => sub {
         requires 'Dist::Zilla::Util::BundleInfo';
         requires 'Dist::Zilla::Util::ExpandINI::Reader';
         requires 'File::Compare';
-        requires 'File::Spec';
         requires 'File::Temp';
         requires 'File::pushd';
+        requires 'JSON::PP';
         requires 'Module::CPANfile', '1.1004';
         requires 'Module::Metadata';
         requires 'Moose', '0.99';
         requires 'Moose::Role';
         requires 'Perl::MinimumVersion', '1.26';
+        requires 'Perl::PrereqScanner', '1.016';
         requires 'Safe::Isa';
         requires 'Scalar::Util';
         requires 'Term::ANSIColor';

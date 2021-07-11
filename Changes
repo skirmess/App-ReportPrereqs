@@ -2,6 +2,9 @@ Revision history for App-ReportPrereqs
 
 {{$NEXT}}
 
+  - Moved smoke test to xt/smoke
+  - make test skips smoke tests unless AUTOMATED_TESTING is true
+
 0.005  2021-06-29 17:08:18 UTC
 
   - Fixed a test failure with ExtUtils::MakeMaker > 7.46

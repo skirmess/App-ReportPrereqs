@@ -3,10 +3,6 @@ abstract: 'report prerequisite versions'
 author:
   - 'Sven Kirmess <sven.kirmess@kzone.ch>'
 build_requires:
-  Capture::Tiny: '0'
-  Cwd: '0'
-  File::Spec: '0'
-  Test::MockModule: '0'
   Test::More: '0.88'
   lib: '0'
   perl: '5.006'

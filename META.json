@@ -44,10 +44,6 @@
       },
       "test" : {
          "requires" : {
-            "Capture::Tiny" : "0",
-            "Cwd" : "0",
-            "File::Spec" : "0",
-            "Test::MockModule" : "0",
             "Test::More" : "0.88",
             "lib" : "0",
             "perl" : "5.006"
