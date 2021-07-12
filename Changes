@@ -2,6 +2,8 @@ Revision history for App-ReportPrereqs
 
 {{$NEXT}}
 
+0.006  2021-07-12 20:06:29 UTC
+
   - Moved smoke test to xt/smoke
   - make test skips smoke tests unless AUTOMATED_TESTING is true
 
