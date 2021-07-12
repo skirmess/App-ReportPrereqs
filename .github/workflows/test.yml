@@ -121,6 +121,8 @@ jobs:
       - name: cpanm --installdeps --notest --with-develop .
         run: ${{ steps.perl.outputs.bin }} ${{ steps.installsitebin.outputs.path }}/cpanm --verbose --installdeps --notest --with-develop .
         working-directory: ${{ github.event.repository.name }}
+        env:
+          AUTOMATED_TESTING: 1
 
       - name: cpanm --notest App::ReportPrereqs
         run: ${{ steps.perl.outputs.bin }} ${{ steps.installsitebin.outputs.path }}/cpanm --verbose --notest App::ReportPrereqs
@@ -243,8 +245,9 @@ jobs:
 
       - name: cpanm --installdeps --notest .
         run: |
-          rm -f cpanfile
+          mv cpanfile .cpanfile.disabled
           ${{ steps.perl.outputs.bin }} ${{ steps.installsitebin.outputs.path }}/cpanm --verbose --installdeps --notest .
+          mv .cpanfile.disabled cpanfile
         working-directory: ${{ github.event.repository.name }}
         env:
           AUTOMATED_TESTING: 1
@@ -338,8 +341,9 @@ jobs:
 
       - name: cpanm --installdeps --notest .
         run: |
-          rm -f cpanfile
+          mv cpanfile .cpanfile.disabled
           ${{ steps.perl.outputs.bin }} ${{ steps.installsitebin.outputs.path }}/cpanm --verbose --installdeps --notest .
+          mv .cpanfile.disabled cpanfile
         working-directory: ${{ github.event.repository.name }}
         env:
           AUTOMATED_TESTING: 1
@@ -453,8 +457,9 @@ jobs:
 
       - name: cpanm --installdeps --notest .
         run: |
-          rm -f cpanfile
+          mv cpanfile .cpanfile.disabled
           ${{ steps.perl.outputs.bin }} ${{ steps.installsitebin.outputs.path }}/cpanm --verbose --installdeps --notest .
+          mv .cpanfile.disabled cpanfile
         working-directory: ${{ github.event.repository.name }}
         env:
           AUTOMATED_TESTING: 1
@@ -588,8 +593,9 @@ jobs:
 
       - name: cpanm --installdeps --notest .
         run: |
-          rm -f cpanfile
+          mv cpanfile .cpanfile.disabled
           ${{ steps.perl.outputs.bin }} ${{ steps.installsitebin.outputs.path }}/cpanm --verbose --installdeps --notest .
+          mv .cpanfile.disabled cpanfile
         working-directory: ${{ github.event.repository.name }}
         env:
           AUTOMATED_TESTING: 1
@@ -721,8 +727,9 @@ jobs:
 
       - name: cpanm --installdeps --notest .
         run: |
-          rm -f cpanfile
-          ${{ steps.perl.outputs.bin }} ${{ steps.installsitebin.outputs.path }}/cpanm --verbose --installdeps --notest .
+          mv cpanfile .cpanfile.disabled
+          ${{ steps.perl.outputs.bin }} ${{ steps.installsitebin.outputs.path }}\cpanm --verbose --installdeps --notest .
+          mv .cpanfile.disabled cpanfile
         working-directory: ${{ github.event.repository.name }}
         env:
           AUTOMATED_TESTING: 1
@@ -812,6 +819,7 @@ jobs:
 
     env:
       TAR_OPTIONS: --warning=no-unknown-keyword
+      WSLENV: AUTOMATED_TESTING:PERL_USE_UNSAFE_INC:TAR_OPTIONS
 
     defaults:
       run:
@@ -879,8 +887,9 @@ jobs:
 
       - name: cpanm --installdeps --notest .
         run: |
-          rm -f cpanfile
+          mv cpanfile .cpanfile.disabled
           ${{ steps.perl.outputs.bin }} ${{ steps.installsitebin.outputs.path }}/cpanm --verbose --installdeps --notest .
+          mv .cpanfile.disabled cpanfile
         working-directory: ${{ github.event.repository.name }}
         env:
           AUTOMATED_TESTING: 1
