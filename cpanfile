@@ -151,6 +151,8 @@ on develop => sub {
         requires 'CPAN::Meta::Prereqs::Filter';
         requires 'CPAN::Meta::Requirements';
         requires 'Carp';
+        requires 'Config::MVP', '2.200012';
+        requires 'Data::Dumper';
         requires 'Dist::Zilla';
         requires 'Dist::Zilla::File::InMemory';
         requires 'Dist::Zilla::File::OnDisk';
@@ -223,9 +225,11 @@ on develop => sub {
         requires 'Moose::Role';
         requires 'Perl::MinimumVersion', '1.26';
         requires 'Perl::PrereqScanner', '1.016';
+        requires 'Perl::Tidy';
         requires 'Safe::Isa';
         requires 'Scalar::Util';
         requires 'Term::ANSIColor';
+        requires 'YAML::Tiny';
         requires 'constant';
         requires 'namespace::autoclean', '0.09';
         requires 'perl', '5.010';
