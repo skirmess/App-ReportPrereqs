@@ -45,34 +45,33 @@ sub main {
     }
 
     note('corpus/dist1: no cpanfile');
+  SKIP:
     {
-        _chdir('corpus/dist1');
+        _chdir( File::Spec->catdir( $basedir, 'corpus', 'dist1' ) );
 
         my ( $stdout, $stderr, @result ) = capture { App::ReportPrereqs::_main() };
         is( $result[0], 1, '_main() returns 1' );
         ok( scalar @result == 1, '... and nothing else' );
         is( $stdout, q{}, '... prints nothing to STDOUT' );
         ok( length($stderr), q{... prints an error to STDERR (error is from Module::CPANfile, we don't test what the error is)} );
-
-        _chdir($basedir);
     }
 
     note('corpus/dist2: invalid cpanfile');
+  SKIP:
     {
-        _chdir('corpus/dist2');
+        _chdir( File::Spec->catdir( $basedir, 'corpus', 'dist2' ) );
 
         my ( $stdout, $stderr, @result ) = capture { App::ReportPrereqs::_main() };
         is( $result[0], 1, '_main() returns 1' );
         ok( scalar @result == 1, '... and nothing else' );
         is( $stdout, q{}, '... prints nothing to STDOUT' );
         ok( length($stderr), q{... prints an error to STDERR (error is from Module::CPANfile, we don't test what the error is)} );
-
-        _chdir($basedir);
     }
 
     note('corpus/dist3: only Local::Alpha in cpanfile');
+  SKIP:
     {
-        _chdir('corpus/dist3');
+        _chdir( File::Spec->catdir( $basedir, 'corpus', 'dist3' ) );
 
         my ( $stdout, $stderr, @result ) = capture { App::ReportPrereqs::_main() };
         is( $result[0], undef, '_main() returns undef' );
@@ -90,13 +89,12 @@ sub main {
         is_deeply( [ split /\n/, $stdout ], [@expected], '... prints correct report to STDOUT' );
 
         is( $stderr, q{}, '... prints nothing to STDERR' );
-
-        _chdir($basedir);
     }
 
     note('corpus/dist4: only Local::Alpha::DoesNotExist in cpanfile');
+  SKIP:
     {
-        _chdir('corpus/dist4');
+        _chdir( File::Spec->catdir( $basedir, 'corpus', 'dist4' ) );
 
         my ( $stdout, $stderr, @result ) = capture { App::ReportPrereqs::_main() };
         is( $result[0], undef, '_main() returns undef' );
@@ -121,13 +119,12 @@ sub main {
         is_deeply( [ split /\n/, $stdout ], [@expected], '... prints correct report to STDOUT' );
 
         is( $stderr, q{}, '... prints nothing to STDERR' );
-
-        _chdir($basedir);
     }
 
     note(q{corpus/dist5: 4 modules in cpanfile (2 don't exist)});
+  SKIP:
     {
-        _chdir('corpus/dist5');
+        _chdir( File::Spec->catdir( $basedir, 'corpus', 'dist5' ) );
 
         my ( $stdout, $stderr, @result ) = capture { App::ReportPrereqs::_main() };
         is( $result[0], undef, '_main() returns undef' );
@@ -156,13 +153,12 @@ sub main {
         is_deeply( [ split /\n/, $stdout ], [@expected], '... prints correct report to STDOUT' );
 
         is( $stderr, q{}, '... prints nothing to STDERR' );
-
-        _chdir($basedir);
     }
 
     note(q{corpus/dist6: complicated file)});
+  SKIP:
     {
-        _chdir('corpus/dist6');
+        _chdir( File::Spec->catdir( $basedir, 'corpus', 'dist6' ) );
 
         my ( $stdout, $stderr, @result ) = capture { App::ReportPrereqs::_main() };
         is( $result[0], undef, '_main() returns undef' );
@@ -233,15 +229,14 @@ sub main {
         is_deeply( [ split /\n/, $stdout ], [@expected], '... prints correct report to STDOUT' );
 
         is( $stderr, q{}, '... prints nothing to STDERR' );
-
-        _chdir($basedir);
     }
 
     note(q{corpus/dist6: complicated file (with develop dependencies))});
+  SKIP:
     {
         local @ARGV = ('--with-develop');
 
-        _chdir('corpus/dist6');
+        _chdir( File::Spec->catdir( $basedir, 'corpus', 'dist6' ) );
 
         my ( $stdout, $stderr, @result ) = capture { App::ReportPrereqs::_main() };
         is( $result[0], undef, '_main() returns undef' );
@@ -320,30 +315,28 @@ sub main {
         is_deeply( [ split /\n/, $stdout ], [@expected], '... prints correct report to STDOUT' );
 
         is( $stderr, q{}, '... prints nothing to STDERR' );
-
-        _chdir($basedir);
     }
 
     note('corpus/dist6: invalid feature');
+  SKIP:
     {
         local @ARGV = qw(--with-feature no-such-feature);
 
-        _chdir('corpus/dist6');
+        _chdir( File::Spec->catdir( $basedir, 'corpus', 'dist6' ) );
 
         my ( $stdout, $stderr, @result ) = capture { App::ReportPrereqs::_main() };
         is( $result[0], 1, '_main() returns 1' );
         ok( scalar @result == 1, '... and nothing else' );
         is( $stdout, q{}, '... prints nothing to STDOUT' );
         ok( length($stderr), q{... prints an error to STDERR (error is from Module::CPANfile, we don't test what the error is)} );
-
-        _chdir($basedir);
     }
 
     note(q{corpus/dist6: complicated file (with develop dependencies, with feature))});
+  SKIP:
     {
         local @ARGV = qw(--with-develop --with-feature omega);
 
-        _chdir('corpus/dist6');
+        _chdir( File::Spec->catdir( $basedir, 'corpus', 'dist6' ) );
 
         my ( $stdout, $stderr, @result ) = capture { App::ReportPrereqs::_main() };
         is( $result[0], undef, '_main() returns undef' );
@@ -428,13 +421,12 @@ sub main {
         is_deeply( [ split /\n/, $stdout ], [@expected], '... prints correct report to STDOUT' );
 
         is( $stderr, q{}, '... prints nothing to STDERR' );
-
-        _chdir($basedir);
     }
 
     note('corpus/dist7: only Local::Omega in cpanfile');
+  SKIP:
     {
-        _chdir('corpus/dist7');
+        _chdir( File::Spec->catdir( $basedir, 'corpus', 'dist7' ) );
 
         my ( $stdout, $stderr, @result ) = capture { App::ReportPrereqs::_main() };
         is( $result[0], undef, '_main() returns undef' );
@@ -459,13 +451,12 @@ sub main {
         is_deeply( [ split /\n/, $stdout ], [@expected], '... prints correct report to STDOUT' );
 
         is( $stderr, q{}, '... prints nothing to STDERR' );
-
-        _chdir($basedir);
     }
 
     note('corpus/dist8: only Local::Psi in cpanfile');
+  SKIP:
     {
-        _chdir('corpus/dist8');
+        _chdir( File::Spec->catdir( $basedir, 'corpus', 'dist8' ) );
 
         my ( $stdout, $stderr, @result ) = capture { App::ReportPrereqs::_main() };
         is( $result[0], undef, '_main() returns undef' );
@@ -490,13 +481,12 @@ sub main {
         is_deeply( [ split /\n/, $stdout ], [@expected], '... prints correct report to STDOUT' );
 
         is( $stderr, q{}, '... prints nothing to STDERR' );
-
-        _chdir($basedir);
     }
 
     note('corpus/dist9: Local::Alpha with version mismatch in cpanfile');
+  SKIP:
     {
-        _chdir('corpus/dist9');
+        _chdir( File::Spec->catdir( $basedir, 'corpus', 'dist9' ) );
 
         my ( $stdout, $stderr, @result ) = capture { App::ReportPrereqs::_main() };
         is( $result[0], undef, '_main() returns undef' );
@@ -521,12 +511,13 @@ sub main {
         is_deeply( [ split /\n/, $stdout ], [@expected], '... prints correct report to STDOUT' );
 
         is( $stderr, q{}, '... prints nothing to STDERR' );
-
-        _chdir($basedir);
     }
 
     note(q{download file from invalid url});
+  SKIP:
     {
+        _chdir($basedir);
+
         my $res = {
             'success' => q{},
             'headers' => {
@@ -549,12 +540,13 @@ sub main {
         ok( scalar @result == 1, '... and nothing else' );
         is( $stdout, q{},             '... prints nothing to STDOUT' );
         is( $stderr, $res->{content}, '... prints the error message from HTTP::Tiny' );
-
-        _chdir($basedir);
     }
 
     note(q{download file from valid url});
+  SKIP:
     {
+        _chdir($basedir);
+
         my $res = {
             'status'   => '200',
             'reason'   => 'OK',
@@ -627,8 +619,6 @@ CONTENT
         is_deeply( [ split /\n/, $stdout ], [@expected], '... prints correct report to STDOUT' );
 
         is( $stderr, q{}, '... prints nothing to STDERR' );
-
-        _chdir($basedir);
     }
 
     #
@@ -640,9 +630,8 @@ CONTENT
 sub _chdir {
     my ($dir) = @_;
 
-    my $rc = chdir $dir;
-    BAIL_OUT("chdir $dir: $!") if !$rc;
-    return $rc;
+    chdir $dir or skip "Test setup failed: Cannot chdir $dir: $!";
+    return;
 }
 
 # vim: ts=4 sts=4 sw=4 et: syntax=perl

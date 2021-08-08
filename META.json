@@ -71,7 +71,6 @@
    "x_contributors" : [
       "Stephan Sachse <ste.sachse@gmail.com>"
    ],
-   "x_generated_by_perl" : "v5.24.0",
    "x_spdx_expression" : "BSD-2-Clause-FreeBSD"
 }
 
