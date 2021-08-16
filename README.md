@@ -13,7 +13,7 @@ Version 0.006
 # DESCRIPTION
 
 The `report-prereqs` utility will examine `cpanfile` for prerequisites with
-[Module::CPANfile](https://metacpan.org/pod/Module::CPANfile). It reports the version of all modules
+[Module::CPANfile](https://metacpan.org/pod/Module%3A%3ACPANfile). It reports the version of all modules
 listed as prerequisites (including 'recommends', 'suggests', etc.). However,
 any 'develop' prerequisites are not reported, unless they show up in another
 category or the `--with-develop` option is used.
@@ -22,7 +22,7 @@ Option `--with-feature` enables optional features provided by a CPAN
 distribution. Option may be used more than once.
 
 Versions are reported based on the result of `parse_version` from
-[ExtUtils::MakeMaker](https://metacpan.org/pod/ExtUtils::MakeMaker), which means prerequisite modules
+[ExtUtils::MakeMaker](https://metacpan.org/pod/ExtUtils%3A%3AMakeMaker), which means prerequisite modules
 are not actually loaded. Parse errors are reported as "undef". If a module is
 not installed, "missing" is reported instead of a version string.
 
@@ -86,10 +86,10 @@ after all your dependencies are installed.
 
 # RATIONALE
 
-## Why this instead of [Dist::Zilla::Plugin::Test::ReportPrereqs](https://metacpan.org/pod/Dist::Zilla::Plugin::Test::ReportPrereqs)
+## Why this instead of [Dist::Zilla::Plugin::Test::ReportPrereqs](https://metacpan.org/pod/Dist%3A%3AZilla%3A%3APlugin%3A%3ATest%3A%3AReportPrereqs)
 
-The [Test::ReportPrereqs](https://metacpan.org/pod/Dist::Zilla::Plugin::Test::ReportPrereqs)
-[Dist::Zilla](https://metacpan.org/pod/Dist::Zilla) plugin adds a test to your distribution that
+The [Test::ReportPrereqs](https://metacpan.org/pod/Dist%3A%3AZilla%3A%3APlugin%3A%3ATest%3A%3AReportPrereqs)
+[Dist::Zilla](https://metacpan.org/pod/Dist%3A%3AZilla) plugin adds a test to your distribution that
 prints all the prerequisites version during testing of your distribution.
 
 The goal of this module is to produce the same output on Travis CI and
@@ -97,7 +97,7 @@ AppVeyor without including an additional file to the distribution.
 
 # SEE ALSO
 
-[Dist::Zilla::Plugin::Test::ReportPrereqs](https://metacpan.org/pod/Dist::Zilla::Plugin::Test::ReportPrereqs)
+[Dist::Zilla::Plugin::Test::ReportPrereqs](https://metacpan.org/pod/Dist%3A%3AZilla%3A%3APlugin%3A%3ATest%3A%3AReportPrereqs)
 
 # SUPPORT
 
