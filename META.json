@@ -4,6 +4,7 @@
       "Sven Kirmess <sven.kirmess@kzone.ch>"
    ],
    "dynamic_config" : 1,
+   "generated_by" : "Dist::Zilla, CPAN::Meta::Converter",
    "license" : [
       "freebsd"
    ],
@@ -47,12 +48,6 @@
             "lib" : "0",
             "perl" : "5.006"
          }
-      }
-   },
-   "provides" : {
-      "App::ReportPrereqs" : {
-         "file" : "bin/report-prereqs",
-         "version" : "0.006"
       }
    },
    "release_status" : "stable",

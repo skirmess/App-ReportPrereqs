@@ -13,7 +13,7 @@ use Test::More 0.88;
 use Test::MockModule;
 
 use lib qw(.);
-use lib File::Spec->catdir( File::Basename::dirname( Cwd::abs_path __FILE__ ), '../../corpus/lib' );
+use lib File::Spec->catdir( File::Basename::dirname( Cwd::abs_path __FILE__ ), '../corpus/lib' );
 
 main();
 

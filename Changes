@@ -2,12 +2,14 @@ Revision history for App-ReportPrereqs
 
 {{$NEXT}}
 
-  - make test skips smoke tests unless AUTOMATED_TESTING or EXTENDED_TESTING is true
+  - Moved extended test to xt (from xt/smoke)
+  - Make test skips extended tests unless AUTOMATED_TESTING or EXTENDED_TESTING
+    is true
 
 0.006  2021-07-12 20:06:29 UTC
 
   - Moved smoke test to xt/smoke
-  - make test skips smoke tests unless AUTOMATED_TESTING is true
+  - Make test skips smoke tests unless AUTOMATED_TESTING is true
 
 0.005  2021-06-29 17:08:18 UTC
 
