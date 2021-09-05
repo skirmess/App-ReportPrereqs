@@ -21,7 +21,7 @@ on test => sub {
 };
 
 on develop => sub {
-    requires 'CPANPLUS';
+    requires 'CPAN';
     requires 'Capture::Tiny';
     requires 'Cwd';
     requires 'File::Spec';
