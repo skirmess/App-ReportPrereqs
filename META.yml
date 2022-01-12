@@ -21,6 +21,10 @@ no_index:
     - corpus
     - t
     - xt
+provides:
+  App::ReportPrereqs:
+    file: bin/report-prereqs
+    version: '0.007'
 requires:
   CPAN::Meta: '0'
   ExtUtils::MakeMaker: '0'

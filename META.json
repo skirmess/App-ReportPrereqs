@@ -51,6 +51,12 @@
          }
       }
    },
+   "provides" : {
+      "App::ReportPrereqs" : {
+         "file" : "bin/report-prereqs",
+         "version" : "0.007"
+      }
+   },
    "release_status" : "stable",
    "resources" : {
       "bugtracker" : {
