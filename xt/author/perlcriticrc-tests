@@ -1,5 +1,3 @@
-[ControlStructures::ProhibitPostfixControls]
-flowcontrol = BAIL_OUT :defaults
 [-Modules::RequireExplicitInclusion]
 [-RegularExpressions::RequireDotMatchAnything]
 [-RegularExpressions::RequireExtendedFormatting]

@@ -18,6 +18,7 @@ my %WriteMakefileArgs = (
     MIN_PERL_VERSION => '5.006',
     NAME             => 'App::ReportPrereqs',
     PREREQ_PM        => {
+        'CPAN::Meta'          => 0,
         'ExtUtils::MakeMaker' => 0,
         'File::Basename'      => 0,
         'Getopt::Long'        => 0,
@@ -40,6 +41,7 @@ my %WriteMakefileArgs = (
 );
 
 my %FallbackPrereqs = (
+    'CPAN::Meta'          => 0,
     'ExtUtils::MakeMaker' => 0,
     'File::Basename'      => 0,
     'Getopt::Long'        => 0,
@@ -81,7 +83,7 @@ sub _add_extended_test_requirements {
     test_requires( 'Capture::Tiny',    0 );
     test_requires( 'Cwd',              0 );
     test_requires( 'File::Spec',       0 );
-    test_requires( 'Test::MockModule', 0 );
+    test_requires( 'Test::MockModule', '0.14' );
     return;
 }
 

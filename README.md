@@ -12,8 +12,9 @@ Version 0.006
 
 # DESCRIPTION
 
-The `report-prereqs` utility will examine `cpanfile` for prerequisites with
-[Module::CPANfile](https://metacpan.org/pod/Module%3A%3ACPANfile). It reports the version of all modules
+The `report-prereqs` utility will examine a `cpanfile`, `META.json`, or
+`META.yml` file for prerequisites with [Module::CPANfile](https://metacpan.org/pod/Module%3A%3ACPANfile)
+respectively [CPAN::Meta](https://metacpan.org/pod/CPAN%3A%3AMeta). It reports the version of all modules
 listed as prerequisites (including 'recommends', 'suggests', etc.). However,
 any 'develop' prerequisites are not reported, unless they show up in another
 category or the `--with-develop` option is used.
@@ -30,6 +31,21 @@ Additionally, unfulfilled required prerequisites are reported after the list
 of all versions.
 
 # OPTIONS
+
+- **--cpanfile \[ FILENAME \]**
+
+    Parse the `filename` with [Module::CPANfile](https://metacpan.org/pod/Module%3A%3ACPANfile) instead of the default behavior.
+    If the `filename` is omitted it defaults to `cpanfile` - which is also the
+    default.
+
+    Can not be used together with `--meta` or a url.
+
+- **--meta \[ FILENAME \]**
+
+    Parse the `filename` with [CPAN::Meta](https://metacpan.org/pod/CPAN%3A%3AMeta) instead of the default behavior. If
+    the `filename` is omitted it defaults to `META.json`.
+
+    Can not be used together with `--cpanfile` or a url.
 
 - **--with-develop**
 
@@ -84,6 +100,10 @@ after all your dependencies are installed.
 
     report-prereqs https://raw.githubusercontent.com/skirmess/App-ReportPrereqs/master/cpanfile
 
+## Example 6 Show prerequisites from a MYMETA.json
+
+    report-prereqs --meta MYMETA.json
+
 # RATIONALE
 
 ## Why this instead of [Dist::Zilla::Plugin::Test::ReportPrereqs](https://metacpan.org/pod/Dist%3A%3AZilla%3A%3APlugin%3A%3ATest%3A%3AReportPrereqs)
@@ -126,7 +146,7 @@ Sven Kirmess <sven.kirmess@kzone.ch>
 
 # COPYRIGHT AND LICENSE
 
-This software is Copyright (c) 2018-2021 by Sven Kirmess.
+This software is Copyright (c) 2018-2022 by Sven Kirmess.
 
 This is free software, licensed under:
 
