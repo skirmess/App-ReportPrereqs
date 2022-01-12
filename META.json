@@ -54,7 +54,7 @@
    "provides" : {
       "App::ReportPrereqs" : {
          "file" : "bin/report-prereqs",
-         "version" : "0.007"
+         "version" : "0.008"
       }
    },
    "release_status" : "stable",
@@ -69,7 +69,7 @@
          "web" : "https://github.com/skirmess/App-ReportPrereqs"
       }
    },
-   "version" : "0.007",
+   "version" : "0.008",
    "x_contributors" : [
       "Stephan Sachse <ste.sachse@gmail.com>"
    ],
