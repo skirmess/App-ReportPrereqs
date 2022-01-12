@@ -2,6 +2,8 @@ Revision history for App-ReportPrereqs
 
 {{$NEXT}}
 
+0.007  2022-01-12 20:19:21 UTC
+
   - Added support for META.json and META.yml files
   - Moved extended test to xt (from xt/smoke)
   - Make test skips extended tests unless AUTOMATED_TESTING or EXTENDED_TESTING
